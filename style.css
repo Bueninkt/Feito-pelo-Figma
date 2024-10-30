@@ -1,26 +1,24 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     height: 100%;
     width: 100%;
 }
 
- .container {
-    width: 100%;
-    height: 100vh;
-    background-color: #eae6d7;
+.container {
+    margin: 0 auto;
     position: relative;
+    background-color: #eae6d7;
     background-image: url(back.png);
-    
 }
-.navbar {
+
+header.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,25 +26,20 @@ body{
     background-color: black;
 }
 
-.navbar ul {
+header.navbar ul {
     list-style-type: none;
     display: flex;
-    gap: 3vw;
+    gap: 2vw;
 }
 
-.navbar ul li {
-    margin-right: 1px;
-}
-
- .navbar ul li a {
+header.navbar ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
-    margin: 20px;
 }
 
-.navbar .buy-button a {
+header.navbar .buy-button a {
     background-color: #FFD700;
     color: black;
     padding: 10px 20px;
@@ -55,33 +48,34 @@ body{
     border-radius: 5px;
 }
 
-.main-content {
+
+main.main-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 50px;
+    height: calc(500% - 90px); 
 }
 
-.texto{
-    margin-top: 10%;
-    font-family: "Fira Sans";
-    font-size: 50px;
-    
+.texto {
+    font-family: "Fira Sans", sans-serif;
+    font-size: 40px;
 }
-.brilhar{
-    color:black;
+
+.brilhar {
+    color: black;
     white-space: nowrap;
     font-weight: 550;
 }
 
-.ea-sports{
+.ea-sports {
     color: black;
     white-space: normal;
     font-weight: 550;
     display: inline-block;
 }
 
-.linha-reduzida{
+.linha-reduzida {
     display: inline-block;
     color: black;
     white-space: normal;
@@ -89,25 +83,97 @@ body{
     padding-bottom: 10px;
 }
 
-.futebol-volta{
-    font-weight:lighter;
+.futebol-volta {
+    font-weight: lighter;
     color: red;
 }
 
-
-
 .image-content img {
     display: block;
-    flex-wrap: wrap;
-    flex-grow: 1;
-    position: absolute;
-    top: 0%;
-    left: 50%;
-    width: 48vw;
-    height: 100%;
-    
-    
+    max-width: 90%;
+    height: auto;
 }
 
+/* Footer Section */
+footer.footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
 
+/* Media Queries */
 
+/* Para iPhone SE */
+@media (max-width: 375px) {
+    header.navbar ul {
+        flex-direction: column;
+        font-size: 2px;
+        gap: 10px;
+        
+        
+    }
+    
+    header.navbar a{
+        font-size: 10px;
+    }
+   
+
+    main.main-content {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .texto {
+        font-size: 1px;
+        text-align: center;
+    }
+
+    .brilhar, .ea-sports {
+        white-space: normal;
+    }
+
+    .image-content img {
+        width: 10%;
+        margin: 0 auto;
+    }
+
+    header.navbar .buy-button a {
+        padding: 60vh 2px;
+        font-size: 1px;
+    }
+}
+
+/* Para iPad mini */
+@media (max-width: 768px) {
+    main.main-content {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    header.navbar .li .a {
+        flex-direction: row;
+    }
+
+    .texto {
+        font-size: 35px;
+        text-align: center;
+    }
+
+    .image-content img {
+        width: 80%;
+        margin: 20px auto;
+    }
+
+    header.navbar ul {
+        gap: 1%;
+    }
+
+    header.navbar .buy-button a {
+        padding: 15px 7px;
+        font-size: 12px;
+    }
+}
